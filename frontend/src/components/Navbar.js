@@ -28,55 +28,25 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            Home
-            <i class='fab fa-typo3' />
-          </Link>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>Home</Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link
-                to='/data'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Data
-              </Link>
+              <Link to='/data' className='nav-links' onClick={closeMobileMenu}>Data</Link>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/reports'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Reports
-              </Link>
+              <Link to='/reports' className='nav-links' onClick={closeMobileMenu}>Reports</Link>
+            </li>
+            <li className='nav-item'><Link to='/essays' className='nav-links' onClick={closeMobileMenu}>Essays</Link>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/essays'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Essays
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
-                About
-              </Link>
+              <Link to='/about' className='nav-links' onClick={closeMobileMenu}>About</Link>
             </li>
 
             <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
+              <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</Link>
             </li>
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
