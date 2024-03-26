@@ -9,7 +9,7 @@ export default function Cards() {
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
-            <CardItem src='images/img-9.jpg' text='oer look at this waterfall' label='Adventure' path='/reports'/>
+            <CardItem src='images/img-9.jpg' text='oer look at this waterfall' label='Adventure' path='/article1'/>
             <CardItem src='images/img-2.jpg' text='love me new drone' label='Luxury' path='/reports'/>
           </ul>
           <ul className='cards__items'>
