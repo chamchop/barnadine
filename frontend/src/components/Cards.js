@@ -9,13 +9,13 @@ export default function Cards() {
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
-            <CardItem src='images/img-9.jpg' text='oer look at this waterfall' label='Adventure' path='/article1'/>
-            <CardItem src='images/img-2.jpg' text='love me new drone' label='Luxury' path='/reports'/>
+            <CardItem src='images/img-9.jpg' text='1' label='Adventure' path='/article1'/>
+            <CardItem src='images/img-2.jpg' text='2' label='Luxury' path='/reports'/>
           </ul>
           <ul className='cards__items'>
-            <CardItem src='images/img-3.jpg' text='me droning on' label='Mystery' path='/reports'/>
-            <CardItem src='images/img-4.jpg' text='I hope theres a fence' label='Adventure' path='/reports'/>
-            <CardItem src='images/img-8.jpg' text='holiday' label='Adrenaline' path='/reports'/>
+            <CardItem src='images/img-3.jpg' text='3' label='Mystery' path='/reports'/>
+            <CardItem src='images/img-4.jpg' text='4' label='Adventure' path='/reports'/>
+            <CardItem src='images/img-8.jpg' text='5' label='Adrenaline' path='/reports'/>
           </ul>
         </div>
       </div>
