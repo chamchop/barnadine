@@ -39,3 +39,5 @@ terraform.rc
 database.ini
 
 .venv/
+
+*.pyc

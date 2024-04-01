@@ -11,7 +11,18 @@ def delete_record(table_name, id):
             conn.commit()
             print(f'deleted record {id} from {table_name}')
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error)    
+        print(error)
+
+def delete_all_records(table_name):
+    sql = f'DELETE FROM {table_name}'
+    try:
+        with psycopg2.connect(**config) as conn:
+            with conn.cursor() as cur:
+                cur.execute(sql)
+            conn.commit()
+            print(f'deleted records from {table_name}')
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)             
 
 def delete_table(input):
     sql = f'DROP TABLE {input}'
