@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package gdp;
 
-option go_package = "barnardine/internal.api/protos/gdp";
+option go_package = "protos/gdp";
 
 service GdpDataService {
   rpc GdpData (GdpDataRequest) returns (GdpDataResponse);

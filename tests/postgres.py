@@ -1,5 +1,4 @@
 import unittest
-import psycopg2
 import sys
 sys.path.insert(1, 'C://Programming//barnardine//backend//postgres')
 from postgres_create import *
