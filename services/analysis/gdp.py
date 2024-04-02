@@ -1,10 +1,5 @@
-import requests
-from bs4 import BeautifulSoup
-import psycopg2
-import pandas as pd
-import unittest
-import psycopg2
 import sys
+import re
 sys.path.insert(1, 'C://Programming//barnardine//backend//postgres')
 from postgres_create import *
 from postgres_read import *
@@ -17,18 +12,15 @@ table_name = 'gdp_data'
 col_1 = 'period'
 col_2 = 'value'
 
-def top_five_numbers(numbers):
-    top_five = sorted(numbers, reverse=True)[:5]
+def top_five_years_by_quarter(list):    
+    pattern = r'2020|2021'
+    filtered_list = [year for year in list if not re.search(pattern, year[0])]           
+    sorted_numbers = sorted(filtered_list, key=lambda x: x[1], reverse=True)
+    top_five = sorted_numbers[:5]
     return top_five
 
 if __name__ == '__main__':
-    data = read_table('ons_gdp')
-    print(data[0][2])
-    # if data:
-    #     print("All data from the table:")
-    #     for row in data:
-    #         print(row[0], row[1])
-        # top = top_five_numbers(data[1])
-        # print(top)
-    # else:
-    #     print("Failed to read data from the table.")       
+    data = read_table(table_name)         
+    top = top_five_years_by_quarter([row for row in data])
+    for index, number in top:
+        print(f'index: {index}, number: {number}')
