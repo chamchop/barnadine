@@ -12,15 +12,27 @@ table_name = 'gdp_data'
 col_1 = 'period'
 col_2 = 'value'
 
-def top_five_years_by_quarter(list):    
+def highest_by_quarter(list):    
     pattern = r'2020|2021'
     filtered_list = [year for year in list if not re.search(pattern, year[0])]           
     sorted_numbers = sorted(filtered_list, key=lambda x: x[1], reverse=True)
-    top_five = sorted_numbers[:5]
-    return top_five
+    highest = sorted_numbers[:10]
+    return highest
+
+def lowest_by_quarter(list):    
+    pattern = r'2020|2021'
+    filtered_list = [year for year in list if not re.search(pattern, year[0])]           
+    sorted_numbers = sorted(filtered_list, key=lambda x: x[1])
+    lowest = sorted_numbers[:10]
+    return lowest
 
 if __name__ == '__main__':
     data = read_table(table_name)         
-    top = top_five_years_by_quarter([row for row in data])
-    for index, number in top:
+    highest = highest_by_quarter([row for row in data])
+    lowest = lowest_by_quarter([row for row in data])
+    print('highest:')
+    for index, number in highest:
         print(f'index: {index}, number: {number}')
+    print('lowest:')
+    for index, number in lowest:
+        print(f'index: {index}, number: {number}')        

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package gdp;
+
+option go_package = "barnardine/internal.api/protos/gdp";
+
+service GdpDataService {
+  rpc GdpData (GdpDataRequest) returns (GdpDataResponse);
+}
+
+message GdpData {
+  string quarter = 1;
+  int32 number = 2;
+}
+
+message GdpDataRequest {
+  // You can define request parameters here if needed
+}
+
+message GdpDataResponse {
+  repeated GdpData data = 1;
+}
