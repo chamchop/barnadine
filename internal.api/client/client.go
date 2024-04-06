@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
 		log.Fatalf("Failed to connect to gRPC server: %v", err)
 	}
@@ -23,8 +23,7 @@ func main() {
 		log.Fatalf("Error calling GdpData: %v", err)
 	}
 
-	data := response.Data
-	for _, gdp := range data {
+	for _, gdp := range response.GetData() {
 		fmt.Printf("%s: %d\n", gdp.Quarter, gdp.Number)
 	}
 }
