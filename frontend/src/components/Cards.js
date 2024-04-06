@@ -9,8 +9,8 @@ export default function Cards() {
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
-            <CardItem src='images/img-9.jpg' text='GDP: Top 10' label='Adventure' path='/gdp'/>
-            <CardItem src='images/img-2.jpg' text='2' label='Luxury' path='/reports'/>
+            <CardItem src='images/img-9.jpg' text='Data: UK GDP - Top 10 Quarters' label='Adventure' path='/gdp'/>
+            <CardItem src='images/img-2.jpg' text='Reviews: Book - ' label='Luxury' path='/book'/>
           </ul>
           <ul className='cards__items'>
             <CardItem src='images/img-3.jpg' text='3' label='Mystery' path='/reports'/>

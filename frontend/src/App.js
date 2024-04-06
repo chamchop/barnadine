@@ -10,6 +10,7 @@ import Essays from './components/pages/Essays';
 import About from './components/pages/About';
 import SignUp from './components/pages/SignUp';
 import gdp from './components/articles/gdp';
+import book from './components/reviews/book';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path='/sign-up' component={SignUp}/>
         </Switch>
           <Route path='/gdp' component={gdp}/>
+          <Route path='/book' component={book}/>
       </Router>
     </>
   );

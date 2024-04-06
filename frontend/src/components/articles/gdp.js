@@ -15,15 +15,15 @@ export default function Gdp() {
       .catch(error => console.error('Error fetching highest:', error));
   }, []);
 
-  const [lowest] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:5000/gdp-lowest/gdp_data')
-      .then(response => response.json())
-      .then(lowest => {
-        setData(lowest);
-      })
-      .catch(error => console.error('Error fetching lowest:', error));
-  }, []);
+  // const [lowest] = useState([]);
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/gdp-lowest/gdp_data')
+  //     .then(response => response.json())
+  //     .then(lowest => {
+  //       setData(lowest);
+  //     })
+  //     .catch(error => console.error('Error fetching lowest:', error));
+  // }, []);
 
   return (
     <>
