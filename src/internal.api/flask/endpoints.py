@@ -1,14 +1,10 @@
 import sys
-sys.path.insert(1, 'C:/Programming/barnardine/src/backend/postgres')
-sys.path.insert(2, 'C:/Programming/barnardine/src/backend/mongo')
-sys.path.insert(3, 'C:/Programming/barnardine/src/services/analysis')
+sys.path.insert(1, 'C:/Programming/barnardine/src/backend/mongo')
+sys.path.insert(2, 'C:/Programming/barnardine/src/services/analysis')
 from flask import Flask, jsonify 
 from flask_cors import CORS
-from postgres_read import *
 from mongo_read import *
-from gdp import *
-from config import load_config
-config = load_config()
+from rds_gdp import *
 
 app = Flask(__name__)
 CORS(app)

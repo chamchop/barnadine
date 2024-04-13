@@ -41,3 +41,4 @@ database.ini
 .venv/
 
 *.pyc
+variable.tf
