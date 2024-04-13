@@ -20,9 +20,9 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
           SCRIPT_BEFORE: |
-            cd /home/ubuntu/home/scripts
-            chmod +x before-deploy.sh
-            sudo bash before-deploy.sh
+            sudo systemctl stop apache2
+            cd /home/ubuntu/home/
+            rm -rf *
           SCRIPT_AFTER: |
             cd /home/ubuntu/home/scripts
             chmod +x deploy.sh
