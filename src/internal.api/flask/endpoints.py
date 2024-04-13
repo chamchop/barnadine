@@ -1,7 +1,7 @@
 import sys
-sys.path.insert(1, 'C://Programming//barnardine//backend//postgres')
-sys.path.insert(2, 'C://Programming//barnardine//backend//mongo')
-sys.path.insert(3, 'C://Programming//barnardine//services//analysis')
+sys.path.insert(1, 'C:/Programming/barnardine/src/backend/postgres')
+sys.path.insert(2, 'C:/Programming/barnardine/src/backend/mongo')
+sys.path.insert(3, 'C:/Programming/barnardine/src/services/analysis')
 from flask import Flask, jsonify 
 from flask_cors import CORS
 from postgres_read import *

@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(1, 'C://Programming//barnardine//services//analysis')
+sys.path.insert(1, 'C:/Programming/barnardine/src/services/analysis')
 from gdp import *
 
 

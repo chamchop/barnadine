@@ -1,6 +1,6 @@
 import sys
 import re
-sys.path.insert(1, 'C://Programming//barnardine//backend//postgres')
+sys.path.insert(1, 'C://Programming//barnardine//src//backend//postgres')
 from postgres_read import *
 from config import load_config
 config = load_config()

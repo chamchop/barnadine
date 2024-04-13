@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.insert(1, 'C://Programming//barnardine//backend//postgres')
+sys.path.insert(1, 'C:/Programming/barnardine/src/backend/postgres')
 from postgres_create import *
 from postgres_read import *
 from postgres_update import *
@@ -23,6 +23,8 @@ class TestPostgresMethods(unittest.TestCase):
 
     def test_read_table(self):
         table = read_table(self.table_name)
+        for row in table:
+            print(row)
         self.assertIsNotNone(table)
 
     # def test_read_record(self):

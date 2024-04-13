@@ -2,7 +2,7 @@ import unittest
 import sys
 from unittest.mock import patch
 import mongomock
-sys.path.insert(1, 'C://Programming//barnardine//backend//mongo')
+sys.path.insert(1, 'C:/Programming/barnardine/src/backend/mongo')
 from mongo_create import *
 from mongo_read import *
 from mongo_update import *
