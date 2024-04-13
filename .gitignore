@@ -42,3 +42,4 @@ database.ini
 
 *.pyc
 variable.tf
+.vscode
