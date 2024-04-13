@@ -41,3 +41,8 @@ def lowest_by_quarter():
     sorted_numbers = sorted(filtered_list, key=lambda x: x[1])
     lowest = sorted_numbers[:10]
     return lowest
+
+if __name__ == '__main__':
+    data = read_all_data()
+    for rows in data:
+        print(rows)
