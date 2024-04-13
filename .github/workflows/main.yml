@@ -1,19 +1,17 @@
-name: ec2-push
+name: ec2
 
 on:
   push:
     branches:
       - master
-
+      
 jobs:
   deploy:
-    name: deploy to ec2 on push to master
+    name: deploy to ec2 remote-server
     runs-on: ubuntu-latest
-
     steps:
       - name: checkout
         uses: actions/checkout@v2
-
       - name: deploy
         uses: easingthemes/ssh-deploy@main
         with:

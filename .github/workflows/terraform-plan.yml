@@ -1,0 +1,43 @@
+name: "Terraform Plan"
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+env:
+  TF_CLOUD_ORGANIZATION: "barnardine"
+  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
+  TF_WORKSPACE: "tf-github-action"
+  CONFIG_DIRECTORY: "./"
+
+jobs:
+  terraform:
+    if: github.repository != 'chamchop/barnadine'
+    name: "Terraform Plan"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: upload config
+      uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
+      id: plan-upload
+      with:
+        workspace: ${{ env.TF_WORKSPACE }}
+        directory: ${{ env.CONFIG_DIRECTORY }}
+        speculative: true
+    - name: create plan run
+      uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.0
+      id: plan-run
+      with:
+        workspace: ${{ env.TF_WORKSPACE }}
+        configuration_version: ${{ steps.plan-upload.outputs.configuration_version_id }}
+        plan_only: true
+    - name: get plan output
+      uses: hashicorp/tfc-workflows-github/actions/plan-output@v1.0.0
+      id: plan-output
+      with:
+        plan: ${{ fromJSON(steps.plan-run.outputs.payload).data.relationships.plan.data.id }}
