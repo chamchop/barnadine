@@ -1,6 +1,8 @@
-import sys
+import sys, os
 sys.path.insert(1, 'C:/Programming/barnardine/src/backend/mongo')
 sys.path.insert(2, 'C:/Programming/barnardine/src/services/analysis')
+sys.path.insert(3, '/home/ubuntu/home/src/services/mongo')
+sys.path.insert(4, '/home/ubuntu/home/src/services/analysis')
 from flask import Flask, jsonify 
 from flask_cors import CORS
 from mongo_read import *

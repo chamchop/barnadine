@@ -8,6 +8,6 @@ cd /home/ubuntu/home/src/frontend/build/
 sudo mv * /var/www/html
 cd /home/ubuntu/home/src/
 sudo apt-get install python3 python3-pip -y
-sudo pip3 install Flask flask-cors psycopg2-binary -y
+sudo pip3 install Flask Flask-Cors psycopg2-binary -y
 cd /home/ubuntu/home/src/internal.api/flask/
 sudo python3 endpoints.py
